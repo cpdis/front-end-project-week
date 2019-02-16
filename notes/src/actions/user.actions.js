@@ -61,13 +61,13 @@ function register(user) {
   };
 
   function request(user) {
-    return { type: userConstants.LOGIN_REQUEST, user };
+    return { type: userConstants.REGISTER_REQUEST, user };
   }
   function success(user) {
-    return { type: userConstants.LOGIN_SUCCESS, user };
+    return { type: userConstants.REGISTER_SUCCESS, user };
   }
   function failure(error) {
-    return { type: userConstants.LOGIN_FAILURE, error };
+    return { type: userConstants.REGISTER_FAILURE, error };
   }
 }
 
@@ -84,13 +84,13 @@ function getAll() {
   };
 
   function request(user) {
-    return { type: userConstants.LOGIN_REQUEST, user };
+    return { type: userConstants.GETALL_REQUEST };
   }
   function success(user) {
-    return { type: userConstants.LOGIN_SUCCESS, user };
+    return { type: userConstants.GETALL_SUCCESS, user };
   }
   function failure(error) {
-    return { type: userConstants.LOGIN_FAILURE, error };
+    return { type: userConstants.GETALL_FAILURE, error };
   }
 }
 
@@ -107,12 +107,12 @@ function _delete(id) {
   };
 
   function request(user) {
-    return { type: userConstants.LOGIN_REQUEST, user };
+    return { type: userConstants.DELETE_REQUEST, id };
   }
   function success(user) {
-    return { type: userConstants.LOGIN_SUCCESS, user };
+    return { type: userConstants.DELETE_SUCCESS, id };
   }
   function failure(error) {
-    return { type: userConstants.LOGIN_FAILURE, error };
+    return { type: userConstants.DELETE_FAILURE, id, error };
   }
 }
