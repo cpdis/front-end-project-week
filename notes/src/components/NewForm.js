@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { fetchNotes, addNote } from "../actions/noteActions";
+import { fetchNotes, addNote } from "../actions/note.actions";
 
 import { Form, Button } from "react-bootstrap";
 

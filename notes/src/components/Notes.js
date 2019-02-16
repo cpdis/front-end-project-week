@@ -1,17 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
-import { fetchNotes } from "../actions/noteActions";
+import { fetchNotes } from "../actions/note.actions";
 
 import NoteCard from "./NoteCard";
 import Search from "./Search";
 
 import styled from "styled-components";
-
-const Container = styled.div`
-  /* background-color: rgb(248, 249, 250); */
-  /* overflow-wrap: break-word;
-  width: 100%; */
-`;
 
 const NotesContainer = styled.div`
   display: flex;
