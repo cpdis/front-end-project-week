@@ -4,11 +4,6 @@ import { Link } from "react-router-dom";
 import { Navbar, Nav } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 
-// import { InstantSearch } from "react-instantsearch-dom";
-import { SignInBlockstackButton } from "blockstack-signin-btn";
-
-// import Search from "./Search";
-
 // TODO: Create logo and app name
 // TODO: Add sign up and login functionality
 export default class TopBar extends Component {
