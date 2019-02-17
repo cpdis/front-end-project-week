@@ -3,22 +3,37 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import { Provider } from "react-redux";
 import App from "./App";
-import { createStore, applyMiddleware } from "redux";
-import { BrowserRouter as Router } from "react-router-dom";
-import thunk from "redux-thunk"
-import logger from 'redux-logger'
-import rootReducer from "./reducers"
+import { createStore, combineReducers, applyMiddleware } from "redux";
+import createHistory from "history/createBrowserHistory";
+import {
+  ConnectedRouter,
+  routerReducer,
+  routerMiddleware
+} from "react-router-redux";
+import thunk from "redux-thunk";
+import { createLogger } from "redux-logger";
+import { noteReducer } from "./reducers/noteReducer";
+import { userReducer } from "./reducers/userReducer";
+import { fetchUserData } from "./actions/userActions";
 
-//Middleware for error logging and dispatching
-const middleware = applyMiddleware(logger, thunk);
+const history = createHistory();
+const middleware = routerMiddleware(history);
 
-const store = createStore(rootReducer, middleware);
+const store = createStore(
+  combineReducers({
+    user: userReducer,
+    router: routerReducer
+  }),
+  applyMiddleware(middleware, createLogger(), thunk)
+);
+
+store.dispatch(fetchUserData());
 
 ReactDOM.render(
-    <Provider store={store}>
-        <Router>
-            <App />
-        </Router>
-    </Provider>,
-    document.getElementById("root")
+  <Provider store={store}>
+    <ConnectedRouter history={history}>
+      <App />
+    </ConnectedRouter>
+  </Provider>,
+  document.getElementById("root")
 );
