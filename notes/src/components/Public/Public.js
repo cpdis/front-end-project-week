@@ -4,7 +4,6 @@ import * as blockstack from "blockstack";
 
 // Public routes are only accessible when not signed in with Blockstack
 const Public = ({ component, ...rest }) => {
-  // This will be stored in redux eventually
   const isAuthenticated = blockstack.isUserSignedIn();
 
   return (
@@ -14,8 +13,8 @@ const Public = ({ component, ...rest }) => {
         return !isAuthenticated ? (
           React.createElement(component, { ...props })
         ) : (
-          <Redirect to="/" />
-        );
+            <Redirect to="/" />
+          );
       }}
     />
   );
