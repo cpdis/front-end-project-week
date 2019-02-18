@@ -25,35 +25,6 @@ export default class TopBar extends Component {
               <Nav.Link>About</Nav.Link>
             </LinkContainer>
           </Nav>
-          {/* <InstantSearch
-            appId="RHLAQFA0BP"
-            apiKey="6415e8bf55d29f2177940e02926c8848"
-            indexName="getstarted_actors"
-          >
-            <Search />
-          </InstantSearch> */}
-          {/* <Button variant="success" style={{ marginLeft: "20px" }}>
-            Sign Up
-          </Button> */}
-          {/* TODO: Update to bootstrap styling */}
-          <SignInBlockstackButton
-            includeBlockstackLogo={false}
-            signInBtnText="Login"
-            signOutBtnText="Sign Out"
-            textStyle={{
-              fontSize: "16px",
-              color: "#fff"
-            }}
-            style={{
-              textAlign: "center",
-              backgroundColor: "#28a745",
-              marginLeft: "20px",
-              width: "75px",
-              borderRadius: "5px",
-              padding: "5px 0px 8px 0px"
-            }}
-            defaultStyle={{}}
-          />
         </Navbar>
       </div>
     );

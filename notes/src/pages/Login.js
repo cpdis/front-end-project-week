@@ -11,7 +11,7 @@ const Login = ({ user, onClick, ...rest }) => {
     )
 }
 
-const mapStateToProps = (dispatch) => {
+const mapStateToProps = ({ user }) => {
     return {
         user
     }
