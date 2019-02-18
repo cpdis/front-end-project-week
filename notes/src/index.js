@@ -22,6 +22,7 @@ const middleware = routerMiddleware(history);
 const store = createStore(
   combineReducers({
     user: userReducer,
+    note: noteReducer,
     router: routerReducer
   }),
   applyMiddleware(middleware, createLogger(), thunk)
