@@ -14,7 +14,7 @@ const HandleLogin = ({ user, handlePendingSignIn, ...rest }) => {
     )
 }
 
-const mapStateToProps = (dispatch) => {
+const mapStateToProps = ({ user }) => {
     return {
         user
     }
